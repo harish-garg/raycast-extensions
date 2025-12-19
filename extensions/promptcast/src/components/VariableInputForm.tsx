@@ -1,5 +1,5 @@
 import { Action, ActionPanel, Form, showToast, Toast, open, popToRoot } from "@raycast/api";
-import { useState, useEffect } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { extractVariables, replaceVariables } from "../lib/variables";
 import { generateDeepLink, getAppDisplayName } from "../lib/deeplinks";
 import { Prompt, AIApp, VariableValues } from "../types";
@@ -10,7 +10,7 @@ interface VariableInputFormProps {
 }
 
 export default function VariableInputForm({ prompt, selectedApps }: VariableInputFormProps) {
-  const variables = extractVariables(prompt.content);
+  const variables = useMemo(() => extractVariables(prompt.content), [prompt.content]);
   const [variableValues, setVariableValues] = useState<VariableValues>({});
 
   // Initialize empty values for all variables
@@ -20,7 +20,7 @@ export default function VariableInputForm({ prompt, selectedApps }: VariableInpu
       initialValues[variable] = "";
     });
     setVariableValues(initialValues);
-  }, []);
+  }, [variables]);
 
   const handleValueChange = (variable: string, value: string) => {
     setVariableValues((prev) => ({
