@@ -1,0 +1,63 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "promptcast",
+  "title": "PromptCast",
+  "description": "Your personal AI prompt library. Save prompts, add variables, and launch them to Claude or ChatGPT with a keystroke. Stop copying and pasting - start prompting smarter.",
+  "icon": "extension-icon.png",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "my-ai-prompts",
+      "title": "My AI Prompts",
+      "description": "Search your saved prompts and launch them to Claude or ChatGPT. Organize prompts with tags and use variables for quick customization.",
+      "mode": "view",
+      "subtitle": "Search and launch AI prompts"
+    },
+    {
+      "name": "create-ai-prompt",
+      "title": "Create AI Prompt",
+      "description": "Quickly save a new AI prompt with tags and variables. Access it later from My Prompts to launch across Claude or ChatGPT.",
+      "mode": "view",
+      "subtitle": "Save a new prompt to your library"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.103.0",
+    "@raycast/utils": "^2.2.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "build": "ray build",
+    "publish": "npx @raycast/api@latest publish",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1"
+  },
+  "author": "harish_garg",
+  "platforms": [
+    "Windows",
+    "macOS"
+  ],
+  "categories": [
+    "Productivity"
+  ],
+  "keywords": [
+    "ai",
+    "prompts",
+    "claude",
+    "chatgpt",
+    "openai",
+    "anthropic",
+    "prompt library",
+    "prompt manager",
+    "variables"
+  ]
+}
